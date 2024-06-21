@@ -6,44 +6,55 @@
     <title>HTML and CSS Final Project </title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+   
 </head>
 
     
       
 <body>
+    
     <header class="header-area header-sticky background-header" id="header1">
         <!-- Desktop menu -->
-          <nav class="container-nav">
-            <div class="desketop-menu">
+        <nav class="container-nav">
+            <div class="desktop-menu">
                 <div class="left-menu">
                     <a href="index.html" class="logo">Training<em> Studio</em></a>
                 </div>
                 <div class="right-menu">
                     <ul>
-                    <li  ><a href="#top" class="active">Home</a></li>
-                    <li ><a href="#features">About</a></li>
-                    <li ><a href="#our-classes">Classes</a></li>
-                    <li ><a href="#schedule">Schedules</a></li>
-                    <li  ><a href="#contact-us">Contact</a></li> 
-                    <li class="button1"><a href="#">Sign Up</a></li>
-                </ul>
+                        <li><a href="#top" class="active">Home</a></li>
+                        <li><a href="#features">About</a></li>
+                        <li><a href="#our-classes">Classes</a></li>
+                        <li><a href="#schedule">Schedules</a></li>
+                        <li><a href="#contact-us">Contact</a></li>
+                        <li class="button1"><a href="#">Sign Up</a></li>
+                    </ul>
                 </div>
-
             </div>
+        </nav>
 
-          </nav>
-
-        <!-- mobile Menu -->
+        <!-- Mobile menu -->
         <nav class="container-nav-mobile">
             <div class="mobile-menu">
-               
-
+                <div class="mobile-header">
+                    <a href="index.html" class="logo">Training<em> Studio</em></a>
+                    <span class="menu-toggle" data-visible="true">&#9776;</span>
+                </div>
+                <ul class="mobile-menu-list" data-visible="false">
+                    <li><a href="#top" class="active">Home</a></li>
+                    <li><a href="#features">About</a></li>
+                    <li><a href="#our-classes">Classes</a></li>
+                    <li><a href="#schedule">Schedules</a></li>
+                    <li><a href="#contact-us">Contact</a></li>
+                    <li class="button1"><a href="#">Sign Up</a></li>
+                    <span class="menu-close" data-visible="false">&#x2715;</span>
+                </ul>
             </div>
-
-          </nav>
-          
+        </nav>
+        
+        
     </header>
-    
 
 <!-- Main banner -->
 
@@ -414,5 +425,27 @@
                 - Designed by <a rel="nofollow" href="https://templatemo.com" class="tm-text-link" target="_parent">TemplateMo</a></p>
         </div>
     </footer>
+
+   <script>
+
+const hamburger = document.querySelector('.menu-toggle');
+const mobileMenu = document.querySelector(".mobile-menu-list");
+const closeIcon = document.querySelector(".menu-close");
+
+hamburger.addEventListener("click", function () {
+    const isVisible = mobileMenu.getAttribute('data-visible') === 'true';
+    mobileMenu.setAttribute('data-visible', !isVisible ? 'true' : 'false');
+    closeIcon.setAttribute('data-visible', !isVisible ? 'true' : 'false');
+    hamburger.setAttribute('data-visible', isVisible ? 'true' : 'false');
+});
+
+closeIcon.addEventListener("click", function () {
+    mobileMenu.setAttribute('data-visible', 'false');
+    closeIcon.setAttribute('data-visible', 'false');
+    hamburger.setAttribute('data-visible', 'true');
+});
+
+
+   </script>
 </body>
 </html>
