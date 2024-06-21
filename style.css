@@ -230,6 +230,39 @@
    
 }
 
+/* screen size upto 500px */
+@media (max-width: 500px) {
+    .mobile-menu-list[data-visible="true"] {
+        transform: translateX(0);
+        transition: transform 0.01s linear;
+        position: fixed;
+        top: 8%;
+        right: 0;
+        background-color: #f7f7f7;  
+        width: 30%;  
+        height: fit-content; 
+        z-index: 1000; 
+        overflow: hidden;  
+    }
+
+    .mobile-header {
+        line-height: 80px;
+        color: #020202;
+        font-size: 28px;
+        font-weight: 800;
+        text-transform: uppercase;
+        transition: all 0.3s ease 0s;
+        display: flex;
+        /* justify-content: space-evenly; */
+        gap: 3px;
+        
+    }
+   
+
+}
+
+
+
 
  
 
